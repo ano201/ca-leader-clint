@@ -3,7 +3,7 @@ import { Button, Form } from 'react-bootstrap';
 
 const MakeAdmin = () => {
 
-    const [success, setSuccess] = useState('');
+    const [success, setSuccess] = useState(false);
     const [admin, setAdmin] = useState({});
 
     const handleOnBlur = e => {

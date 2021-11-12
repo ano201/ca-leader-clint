@@ -7,8 +7,10 @@ import {
     Link
 } from "react-router-dom";
 import useAuth from '../../../Hooks/useAuth';
+import AdminRoute from '../../Login/AdminRoute/AdminRoute';
 import Footer from '../../Shared/Footer/Footer';
 import Navigation from '../../Shared/Navigation/Navigation';
+import AddReview from '../AddReview/AddReview';
 import AllOrders from '../AllOrders/AllOrders';
 import DashboardHome from '../DashboardHome/DashboardHome';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
@@ -26,6 +28,7 @@ const Dashboard = () => {
                 <Link className={cStyle} to={`${url}`}>Dashboard</Link>
                 <Link className={cStyle} to={`${url}/myOrders`}>My Orders</Link>
                 <Link className={cStyle} to={`${url}/pay`}>Pay</Link>
+                <Link className={cStyle} to={`${url}/review`}>Review</Link>
                 {admin && <>
                     <Link className={cStyle} to={`${url}/allOrders`}>Manage Orders</Link>
                     <Link className={cStyle} to={`${url}/makeAdmin`}>Make Admin</Link>
@@ -40,12 +43,15 @@ const Dashboard = () => {
                     <Route path={`${path}/pay`}>
                         <Pay></Pay>
                     </Route>
-                    <Route path={`${path}/allOrders`}>
+                    <Route path={`${path}/review`}>
+                        <AddReview></AddReview>
+                    </Route>
+                    <AdminRoute path={`${path}/allOrders`}>
                         <AllOrders></AllOrders>
-                    </Route>
-                    <Route path={`${path}/makeAdmin`}>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/makeAdmin`}>
                         <MakeAdmin></MakeAdmin>
-                    </Route>
+                    </AdminRoute>
                 </Switch>
             </Container >
             <Footer></Footer>
