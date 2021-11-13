@@ -10,6 +10,7 @@ import useAuth from '../../../Hooks/useAuth';
 import AdminRoute from '../../Login/AdminRoute/AdminRoute';
 import Footer from '../../Shared/Footer/Footer';
 import Navigation from '../../Shared/Navigation/Navigation';
+import AddNewItem from '../AddNewItem/AddNewItem';
 import AddReview from '../AddReview/AddReview';
 import AllOrders from '../AllOrders/AllOrders';
 import DashboardHome from '../DashboardHome/DashboardHome';
@@ -32,6 +33,7 @@ const Dashboard = () => {
                 {admin && <>
                     <Link className={cStyle} to={`${url}/allOrders`}>Manage Orders</Link>
                     <Link className={cStyle} to={`${url}/makeAdmin`}>Make Admin</Link>
+                    <Link className={cStyle} to={`${url}/addNewItem`}>Add New Item</Link>
                 </>}
                 <Switch>
                     <Route exact path={path}>
@@ -51,6 +53,9 @@ const Dashboard = () => {
                     </AdminRoute>
                     <AdminRoute path={`${path}/makeAdmin`}>
                         <MakeAdmin></MakeAdmin>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/addNewItem`}>
+                        <AddNewItem></AddNewItem>
                     </AdminRoute>
                 </Switch>
             </Container >

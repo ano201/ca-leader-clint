@@ -89,7 +89,7 @@ const useFirebase = () => {
     }
     
     useEffect(() => {
-        fetch(`http://localhost:5000/admin?email=${user.email}`)
+        fetch(`https://young-depths-96533.herokuapp.com/admin?email=${user.email}`)
             .then(res => res.json())
             .then(data => {
                 setAdmin(data[0]?.email)

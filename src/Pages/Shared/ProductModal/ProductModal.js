@@ -25,7 +25,7 @@ const ProductModal = ({ show, handleClose, information }) => {
             productPrice: cost
         }
 
-        fetch('http://localhost:5000/orders', {
+        fetch('https://young-depths-96533.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

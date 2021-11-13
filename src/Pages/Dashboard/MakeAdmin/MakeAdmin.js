@@ -15,7 +15,7 @@ const MakeAdmin = () => {
     }
 
     const handleAdmin = e => {
-        fetch('http://localhost:5000/admin', {
+        fetch('https://young-depths-96533.herokuapp.com/admin', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

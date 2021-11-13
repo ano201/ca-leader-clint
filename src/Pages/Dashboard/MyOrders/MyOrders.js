@@ -7,7 +7,7 @@ const MyOrders = () => {
     const {user} = useAuth();
     const [orderedList, setOrderedList] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/orders?email=${user.email}`)
+        fetch(`https://young-depths-96533.herokuapp.com/orders?email=${user.email}`)
             .then(res => res.json())
             .then(data => setOrderedList(data))
     }, [user.email])
@@ -15,7 +15,7 @@ const MyOrders = () => {
     const handleCancelOrder = (id) => {
         const proceed = window.confirm('Are you sure, you want to cancel?');
         if (proceed) {
-            const url = `http://localhost:5000/orders/${id}`;
+            const url = `https://young-depths-96533.herokuapp.com/orders/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
